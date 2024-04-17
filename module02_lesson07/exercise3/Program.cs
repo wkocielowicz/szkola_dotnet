@@ -4,16 +4,32 @@
     {
         private static void Main(string[] args)
         {
+            int a;
+
             Console.WriteLine("Enter integer number: ");
-            int a = int.Parse(Console.ReadLine());
+            try
+            {
+                a = int.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Invalid input! Please enter an integer number.");
+                return;
+            }
+            
 
             if (a < 0)
             {
-                Console.WriteLine($"{a} jest liczba ujemna");
+                Console.WriteLine($"{a} is a negative number");
+            }
+            else if (a == 0)
+            {
+                Console.WriteLine($"{a} is zero");
             }
             else
             {
-                Console.WriteLine($"{a} jest liczba nieujemna");
+                Console.WriteLine($"{a} is a positive number");
             }
         }
     }

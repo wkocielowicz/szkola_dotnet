@@ -4,12 +4,19 @@
     {
         static void Main(string[] args)
         {
+            double a;
+            double b;
+            double c;
+
             Console.WriteLine("Podaj pierwsza liczbe: ");
-            double a = double.Parse(Console.ReadLine());
+            if (double.TryParse(Console.ReadLine(), out a)) ;
+            else { Console.WriteLine("Invalid data. Enter correct value."); return; }
             Console.WriteLine("Podaj druga liczbe: ");
-            double b = double.Parse(Console.ReadLine());
+            if (double.TryParse(Console.ReadLine(), out b)) ;
+            else { Console.WriteLine("Invalid data. Enter correct value."); return; }
             Console.WriteLine("Podaj trzecia liczbe: ");
-            double c = double.Parse(Console.ReadLine());
+            if (double.TryParse(Console.ReadLine(), out c)) ;
+            else { Console.WriteLine("Invalid data. Enter correct value."); return; }
 
             if (a>b && a>c)
             {

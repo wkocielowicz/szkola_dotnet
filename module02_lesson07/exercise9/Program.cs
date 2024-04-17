@@ -4,8 +4,9 @@
     {
         static void Main(string[] args)
         {
+            int temp;
             Console.WriteLine("Enter the temperature in Celsius degrees: ");
-            int temp = int.Parse(Console.ReadLine());
+            if (int.TryParse(Console.ReadLine(), out temp)) ; else { Console.WriteLine("Invalid data. Enter correct value."); return; }
 
             switch (temp)
             {

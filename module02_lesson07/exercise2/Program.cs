@@ -2,16 +2,23 @@
 {
     private static void Main(string[] args)
     {
+        int number;
         Console.WriteLine("Enter integer number: ");
-        int a = int.Parse(Console.ReadLine());
-
-        if (a%2 != 0)
+        string? input = Console.ReadLine();
+        if (int.TryParse(input, out number))
         {
-            Console.WriteLine($"{a} jest liczba nieparzysta");
+            if (number % 2 != 0)
+            {
+                Console.WriteLine($"{number} jest liczba nieparzysta");
+            }
+            else
+            {
+                Console.WriteLine($"{number} jest liczba parzysta");
+            }
         }
         else
         {
-            Console.WriteLine($"{a} jest liczba parzysta");
+            Console.WriteLine("Invalid input, enter integer number.");
         }
     }
 }

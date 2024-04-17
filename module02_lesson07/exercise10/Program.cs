@@ -6,11 +6,11 @@
         {
             int[] triangle = new int[3];
             Console.WriteLine("Podaj pierwsza liczbe: ");
-            triangle[0] = int.Parse(Console.ReadLine());
+            if(int.TryParse(Console.ReadLine(), out triangle[0])) ; else { Console.WriteLine("Invalid data. Enter correct value."); return; }
             Console.WriteLine("Podaj druga liczbe: ");
-            triangle[1] = int.Parse(Console.ReadLine());
+            if (int.TryParse(Console.ReadLine(), out triangle[1])) ; else { Console.WriteLine("Invalid data. Enter correct value."); return; }
             Console.WriteLine("Podaj trzecia liczbe: ");
-            triangle[2] = int.Parse(Console.ReadLine());
+            if (int.TryParse(Console.ReadLine(), out triangle[2])) ; else { Console.WriteLine("Invalid data. Enter correct value."); return; }
 
             Console.WriteLine("Podane przez ciebie liczby to:");
             Console.WriteLine(string.Join(",", triangle));

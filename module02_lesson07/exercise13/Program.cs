@@ -1,19 +1,21 @@
-﻿namespace exercise13
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace exercise13
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Podaj pierwsza liczbe: ");
-            double a = double.Parse(Console.ReadLine());
+            if (double.TryParse(Console.ReadLine(), out double a)) ; else { Console.WriteLine("Invalid input, enter the number."); return; }
             Console.WriteLine("Podaj druga liczbe: ");
-            double b = double.Parse(Console.ReadLine());
+            if (double.TryParse(Console.ReadLine(), out double b)) ; else { Console.WriteLine("Invalid input, enter the number."); return; }
             Console.WriteLine("Podaj numer operacji do wykonania: ");
             Console.WriteLine("    1. Dodawanie");
             Console.WriteLine("    2. Odejmowanie");
             Console.WriteLine("    3. Mnożenie");
             Console.WriteLine("    4. Dzielenie");
-            int menu = int.Parse(Console.ReadLine());
+            if (int.TryParse(Console.ReadLine(), out int menu)) ; else { Console.WriteLine("Invalid input, enter integer number."); return; };
             var result = 0.0;
 
             switch (menu)
