@@ -8,7 +8,11 @@
             while (number < 1)
             {
                 Console.WriteLine("Enter an integer greater than 1:");
-                number = int.Parse(Console.ReadLine());
+                if (int.TryParse(Console.ReadLine(), out number));
+                else
+                {
+                    Console.WriteLine("Invalid value. Enter an integer greater than 1: ");
+                }
             }
             int tempNumber = 1;
             int counter = 1;

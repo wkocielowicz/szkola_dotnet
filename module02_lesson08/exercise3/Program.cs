@@ -12,7 +12,11 @@
             while (number < 1)
             {
                 Console.WriteLine("Enter how many terms of the Fibonacci sequence you want to see: ");
-                number = int.Parse(Console.ReadLine());
+                if (int.TryParse(Console.ReadLine(), out number));
+                else
+                {
+                    Console.WriteLine("Enter correct value.");
+                }
             }
 
             if (number == 1)
